@@ -1,0 +1,77 @@
+/* Inspiration https://catalin.red/css3-ordered-list-styles/ */
+
+.random-table-header {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .4em;
+    margin: .5em 0 .5em 0em;
+    background: #fff5f5;
+    color: #a1470d;
+    border: 0.1em #a1470d solid;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all .3s ease-out;
+}
+
+ol.random-table {
+    counter-reset: li; /* Initiate a counter */
+    list-style: none; /* Remove default numbering */
+    *list-style: decimal; /* Keep using default numbering for IE6/7 */
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    /*text-shadow: 0 1px 0 rgba(255,255,255,.5);*/
+}
+
+.random-table a {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    text-decoration: none;
+    transition: all 1s linear;
+  }
+
+.random-table li:nth-child(odd) a {
+    background: #C4AEA9;
+    color: #444;
+}
+.random-table li:nth-child(even) a {
+    background: #dfd5d5;
+    color: #444;
+}
+
+.random-table a:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #FF7700;
+    color: #000;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .random-table a:after{
+    position: absolute;
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s linear;
+  }
+
+  .random-table li.selected 
+  { 
+    a:before, a {
+        background: #AA0077;
+        color: #EEEEEE;
+    }
+  }
